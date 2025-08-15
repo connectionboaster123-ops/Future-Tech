@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learn - Tech World</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      text-shadow: 0 0 10px #0f0;
+      border-bottom: 2px solid #0f0;
+      padding-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.5;
+    }
+    a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-shadow: 0 0 5px #0ff;
+    }
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Learn</h1>
+  <p>Welcome to the Learn section of Tech World. Here, you'll find tutorials, guides, and resources to help you explore the digital universe.</p>
+
+  <a class="back-link" href="index.html">⬅ Back to Home</a>
+</body>
+</html>
