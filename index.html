@@ -10,7 +10,7 @@
       color: #0f0;
       font-family: 'Courier New', Courier, monospace;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
 
     h1 {
@@ -20,6 +20,7 @@
       border-bottom: 2px solid #0f0;
       padding-bottom: 10px;
       margin-bottom: 30px;
+      text-shadow: 0 0 10px #0f0;
     }
 
     ul {
@@ -49,6 +50,8 @@
       max-width: 600px;
       margin: 0 auto;
       background-color: #111;
+      box-shadow: 0 0 15px #0f0;
+      border-radius: 10px;
     }
 
     .footer {
@@ -57,27 +60,107 @@
       font-size: 0.9em;
       color: #555;
     }
+
+    /* Login form styles */
+    #login-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      border: 1px solid #0f0;
+      padding: 30px;
+      background-color: #111;
+      box-shadow: 0 0 15px #0f0;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: 1px solid #0f0;
+      background-color: #000;
+      color: #0f0;
+      font-size: 1em;
+      outline: none;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      background-color: #0f0;
+      color: #000;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0ff;
+    }
+
+    #main-content {
+      display: none;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
-  <div class="terminal-box">
-    <h1>Tech World</h1>
-    <ul>
-      <li><a href="#">📱 Phone Number Tracking</a></li>
-      <li><a href="#">💻 Ethical Hacking</a></li>
-      <li><a href="#">🌐 Free Internet VPN</a></li>
-      <li><a href="#">🧠 Software Engineering</a></li>
-      <li><a href="#">📲 Phone Hacks & Tricks</a></li>
-      <li><a href="#">⌨️ Computer Programming</a></li>
-      <li><a href="#">🤖 Artificial Intelligence</a></li>
-      <li><a href="#">🎮 Game Tournament</a></li>
-      <li><a href="#">🔐 Secret Apps & Software</a></li>
-      <li><a href="#">🎬 Free Translated Movies</a></li>
-    </ul>
+
+  <!-- Login Screen -->
+  <div id="login-box">
+    <div class="login-container">
+      <h2>🔐 Enter Password</h2>
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="checkPassword()">Access</button>
+      <p id="error" style="color: red; display: none;">❌ Incorrect Password</p>
+    </div>
   </div>
 
-  <div class="footer">
-    © 2025 HackStyle Central — For Educational Purposes Only
+  <!-- Main Content -->
+  <div id="main-content">
+    <div class="terminal-box">
+      <h1>Tech World</h1>
+      <ul>
+        <li><a href="#">📱 Phone Number Tracking</a></li>
+        <li><a href="#">💻 Ethical Hacking</a></li>
+        <li><a href="#">🌐 Free Internet VPN</a></li>
+        <li><a href="#">🧠 Software Engineering</a></li>
+        <li><a href="#">📲 Phone Hacks & Tricks</a></li>
+        <li><a href="#">⌨️ Computer Programming</a></li>
+        <li><a href="#">🤖 Artificial Intelligence</a></li>
+        <li><a href="#">🎮 Game Tournament</a></li>
+        <li><a href="#">🔐 Secret Apps & Software</a></li>
+        <li><a href="#">🎬 Free Translated Movies</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      © 2025 HackStyle Central — For Educational Purposes Only
+    </div>
   </div>
+
+  <script>
+    function checkPassword() {
+      const allowedPasswords = ["gfghhz", "hijyjs"];
+      const pass = document.getElementById("password").value;
+
+      if (allowedPasswords.includes(pass)) {
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+
 </body>
 </html>
