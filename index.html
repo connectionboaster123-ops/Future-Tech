@@ -111,6 +111,25 @@
       display: none;
       padding: 20px;
     }
+
+    /* Intruder detected screen */
+    #intruder {
+      display: none;
+      height: 100vh;
+      background-color: black;
+      color: red;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 40vh;
+      animation: flash 0.5s infinite;
+    }
+
+    @keyframes flash {
+      0% { background-color: black; color: red; }
+      50% { background-color: red; color: black; }
+      100% { background-color: black; color: red; }
+    }
   </style>
 </head>
 <body>
@@ -148,16 +167,27 @@
     </div>
   </div>
 
+  <!-- Intruder Detected Screen -->
+  <div id="intruder">🚨 INTRUDER DETECTED 🚨</div>
+
   <script>
+    let attempts = 0;
+    const allowedPasswords = ["gfghhz", "hijyjs"];
+
     function checkPassword() {
-      const allowedPasswords = ["gfghhz", "hijyjs"];
       const pass = document.getElementById("password").value;
 
       if (allowedPasswords.includes(pass)) {
         document.getElementById("login-box").style.display = "none";
         document.getElementById("main-content").style.display = "block";
       } else {
+        attempts++;
         document.getElementById("error").style.display = "block";
+
+        if (attempts >= 3) {
+          document.getElementById("login-box").style.display = "none";
+          document.getElementById("intruder").style.display = "block";
+        }
       }
     }
   </script>
