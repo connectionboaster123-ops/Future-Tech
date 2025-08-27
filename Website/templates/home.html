@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<style>
+    .welcome-container {
+        max-width: 800px;
+        margin: 30px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+    a {
+        color: #007BFF;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="welcome-container">
+    <h1>Welcome to ISCC Coding Competitions</h1>
+    <p>ISCC competitions are organised to equip the youth with problem-solving skills.
+       This site is developed by <strong>Bashir Yta Ambassador</strong>.</p>
+    
+    <p>If you have any question concerning these competitions,
+       <a href="{% url 'signup' %}">Talk to us</a>.</p>
+    
+    <p>Our <a href="{% url 'login' %}">partners</a> help us promote talents and skills among the youth.</p>
+</div>
+{% endblock %}
